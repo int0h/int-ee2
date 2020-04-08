@@ -1,6 +1,6 @@
 {
   "name": "int-ee2",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,10 @@
     "test-report": "nyc -r html node -r ts-node/register ./tests/index.ts | tap-spec",
     "build": "tsc",
     "prepublish": "npm run build"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/int0h/int-ee2"
   },
   "keywords": [],
   "author": "",
@@ -27,5 +31,9 @@
     "ts-node": "^8.3.0",
     "typescript": "^3.6.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ]
 }
