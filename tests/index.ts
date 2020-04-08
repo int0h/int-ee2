@@ -30,7 +30,7 @@ test('unsibscribe with off method', t => {
 
     ee.emit('a', 1);
 
-    ee.off('a', handler);    
+    ee.off('a', handler);
 
     ee.emit('a', 2);
 
@@ -48,7 +48,7 @@ test('unsibscribe with result of on method', t => {
 
     ee.emit('a', 1);
 
-    unsubscribe();   
+    unsubscribe();
 
     ee.emit('a', 2);
 
@@ -78,6 +78,6 @@ test('offing not existed event/listener is ok', t => {
     const ee = new EventEmitter<{a: (a: number) => void}>();
 
     ee.off('a', () => 0);
-    
+
     t.end();
 });
