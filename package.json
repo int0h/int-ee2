@@ -1,12 +1,14 @@
 {
   "name": "int-ee2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --ignore-path ./.gitignore --ext .ts",
     "test": "nyc node -r ts-node/register ./tests/index.ts | tap-spec",
-    "test-report": "nyc -r html node -r ts-node/register ./tests/index.ts | tap-spec"
+    "test-report": "nyc -r html node -r ts-node/register ./tests/index.ts | tap-spec",
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",
