@@ -81,3 +81,27 @@ test('offing not existed event/listener is ok', t => {
 
     t.end();
 });
+
+test('listen to all events', t => {
+    const ee = new EventEmitter<{
+        a: (a: number) => void;
+        b: (b: string) => void;
+    }>();
+
+    t.plan(4);
+
+    const unsubscribe = ee.onAny((event, arg) => {
+        t.true(['a', 'b'].includes(event));
+        t.true([1, 'b'].includes(arg));
+    });
+
+    ee.emit('a', 1);
+    
+    ee.emit('b', 'b');
+
+    unsubscribe();
+
+    ee.emit('a', 123);
+
+    t.end();
+});
